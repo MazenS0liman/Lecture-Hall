@@ -1,0 +1,103 @@
+|seg7
+A[0] => FourBitAdder:STAGE_FA.X[0]
+A[1] => FourBitAdder:STAGE_FA.X[1]
+A[2] => FourBitAdder:STAGE_FA.X[2]
+A[3] => FourBitAdder:STAGE_FA.X[3]
+B[0] => FourBitAdder:STAGE_FA.Y[0]
+B[1] => FourBitAdder:STAGE_FA.Y[1]
+B[2] => FourBitAdder:STAGE_FA.Y[2]
+B[3] => FourBitAdder:STAGE_FA.Y[3]
+s[0] <= FourBitAdder:STAGE_FA.SUM[0]
+s[1] <= FourBitAdder:STAGE_FA.SUM[1]
+s[2] <= FourBitAdder:STAGE_FA.SUM[2]
+s[3] <= FourBitAdder:STAGE_FA.SUM[3]
+s[4] <= FourBitAdder:STAGE_FA.SUM[4]
+led1[7] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+led1[6] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+led1[5] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+led1[4] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+led1[3] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+led1[2] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+led1[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+led2[7] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+led2[6] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+led2[5] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+led2[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+led2[3] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+led2[2] <= <GND>
+led2[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|seg7|FourBitAdder:STAGE_FA
+Cin => FullAdd:STAGE0.Cin
+X[0] => FullAdd:STAGE0.X
+X[1] => FullAdd:STAGE1.X
+X[2] => FullAdd:STAGE2.X
+X[3] => FullAdd:STAGE3.X
+Y[0] => FullAdd:STAGE0.Y
+Y[1] => FullAdd:STAGE1.Y
+Y[2] => FullAdd:STAGE2.Y
+Y[3] => FullAdd:STAGE3.Y
+SUM[0] <= FullAdd:STAGE0.S
+SUM[1] <= FullAdd:STAGE1.S
+SUM[2] <= FullAdd:STAGE2.S
+SUM[3] <= FullAdd:STAGE3.S
+SUM[4] <= FullAdd:STAGE3.Cout
+
+
+|seg7|FourBitAdder:STAGE_FA|FullAdd:STAGE0
+Cin => S.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+X => S.IN0
+X => Cout.IN0
+X => Cout.IN1
+Y => S.IN1
+Y => Cout.IN1
+Y => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|seg7|FourBitAdder:STAGE_FA|FullAdd:STAGE1
+Cin => S.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+X => S.IN0
+X => Cout.IN0
+X => Cout.IN1
+Y => S.IN1
+Y => Cout.IN1
+Y => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|seg7|FourBitAdder:STAGE_FA|FullAdd:STAGE2
+Cin => S.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+X => S.IN0
+X => Cout.IN0
+X => Cout.IN1
+Y => S.IN1
+Y => Cout.IN1
+Y => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|seg7|FourBitAdder:STAGE_FA|FullAdd:STAGE3
+Cin => S.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+X => S.IN0
+X => Cout.IN0
+X => Cout.IN1
+Y => S.IN1
+Y => Cout.IN1
+Y => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

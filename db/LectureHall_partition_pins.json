@@ -1,0 +1,85 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "motor",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sinitaize_sensor",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "enter_sensor",
+					"strict" : false
+				},
+				{
+					"name" : "exit_sensor",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

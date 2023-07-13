@@ -1,0 +1,76 @@
+Library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_arith.ALL;
+
+Entity proj IS
+	Port (
+		enter_sensor,exit_sensor,sinitaize_sensor : IN std_logic;
+		motor : out std_logic;
+		bcd0,bcd1 : OUT std_logic_vector(1 to 7));
+END proj;
+
+Architecture arc OF proj IS
+
+SIGNAL counter0 : Integer range 0 To 9 ;
+SIGNAL counter1 : Integer range 0 To 9 ;
+
+BEGIN
+PROCESS(enter_sensor,exit_sensor,sinitaize_sensor)
+	BEGIN
+
+	IF(enter_sensor'EVENT and enter_sensor='1') THEN
+		IF(counter0 < 9) THEN
+			counter0<=counter0+1;
+		ELSE
+			counter0<=0;
+			counter1<=counter1+1;
+		END IF;
+	END IF ;
+	
+	IF(exit_sensor'EVENT and exit_sensor<='1')THEN
+		if(counter0 > 0)then
+			counter0<=counter0-1;
+		else
+			counter0<=9;
+			counter1<=counter1-1;
+		END IF;
+	END IF;
+	
+	IF(sinitaize_sensor'EVENT and  sinitaize_sensor='1')THEN
+		motor <= '1';
+	END IF;
+	
+	IF(sinitaize_sensor'EVENT and  sinitaize_sensor='0')THEN
+	motor <= '0';
+	END IF;
+	
+	case counter0 IS
+	When 0 => bcd0<="0000001";
+	When 1 => bcd0<="1001111";
+	When 2 => bcd0<="0010010";
+	When 3 => bcd0<="0000110";
+	When 4 => bcd0<="1001100";
+	When 5 => bcd0<="0100100";
+	When 6 => bcd0<="0100000";
+	When 7 => bcd0<="0001111";
+	When 8 => bcd0<="0000000";
+	When 9 => bcd0<="0000100";
+	When others => bcd0<="-------";
+	End Case;
+
+	case counter1 IS
+	When 0 => bcd1<="0000001";
+	When 1 => bcd1<="1001111";
+	When 2 => bcd1<="0010010";
+	When 3 => bcd1<="0000110";
+	When 4 => bcd1<="1001100";
+	When 5 => bcd1<="0100100";
+	When 6 => bcd1<="0100000";
+	When 7 => bcd1<="0001111";
+	When 8 => bcd1<="0000000";
+	When 9 => bcd1<="0000100";
+	When others => bcd1<="-------";
+	End Case;
+
+End PROCESS ;
+end arc;

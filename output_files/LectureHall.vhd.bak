@@ -1,0 +1,10 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_arith.ALL;
+
+ENTITY Timer IS
+GENERIC (ClockFrequency : integer:= )'
+PORT(
+		Clk : IN STD_LOGIC;
+		Seconds : OUT STD_LOGIC);
+		

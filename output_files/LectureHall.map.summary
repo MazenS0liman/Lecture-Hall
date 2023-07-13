@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Tue Jan 03 12:53:45 2023
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : LectureHall
+Top-level Entity Name : proj
+Family : MAX 10
+Total logic elements : 99
+    Total combinational functions : 99
+    Dedicated logic registers : 41
+Total registers : 41
+Total pins : 19
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
